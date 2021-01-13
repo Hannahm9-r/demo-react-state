@@ -11,3 +11,13 @@
     background-color: black;
     color: white;
 }
+
+.on {
+    background-color: turquoise;
+    color: pink;
+}
+
+.off {
+    background-color: pink;
+    color: turquoise;
+}
