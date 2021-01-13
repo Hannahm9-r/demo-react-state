@@ -1,29 +1,64 @@
 import React, { useState } from "react";
+import './Room.css';
 
 function Room() {
   let [isLit, setLit] = useState (false);
   let [age, setAge] = useState (24);
 
-  function updateLit () {
-      console.log ("Button clicked");
-      setLit(!isLit);
-  }
-
-  function increaseAge () {
-    console.log ("increaseAge Button clicked");
-    setAge(++age);
-}
+ 
   return (
-    <div>
+    <div className = {`room ${(isLit? "lit" : "dark")}`}>
       This room is {isLit ? "Lit" : "Dark"}
       <br/>
       Age : {age}
       <br/>
-      <button onClick = {updateLit} >Toggle Light</button>
+      <button onClick = {()=> setLit(!isLit)} >Toggle Light</button>
       <br/>
-      <button onClick = {increaseAge} >increase Age</button>
+      <button onClick = { ()=> {
+          console.log ("Increase Age arrow function");
+          setAge(++age);}
+          } >increase Age</button>
     </div>
   );
 }
 
 export default Room;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*function updateLit () {
+      console.log ("Button clicked");
+      setLit(!isLit);
+  }
+  */
+
+/*
+  function increaseAge () {
+    console.log ("increaseAge Button clicked");
+    setAge(++age);
+}
+*/
